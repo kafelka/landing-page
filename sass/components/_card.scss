@@ -59,14 +59,15 @@
     transform: rotateY(0);
   }
 
-
   //front side styling
   &__picture {
     background-size: cover;
     height: 23rem;
     background-blend-mode: screen;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);  //overflow no longer works??
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
   
     &--1 {
       background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark),
@@ -165,7 +166,4 @@
     font-size: 6rem;
     font-weight: 100;
   }
-
-
-
 }
