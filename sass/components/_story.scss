@@ -21,14 +21,20 @@
 
   &__shape {
     height: 15rem;
-    width: 15rem;
+    width: 15rem; 
     float: left; //works only if h&w are defined
-    -webkit-shape-outside: circle(50% at 50% 50%);
-    shape-outside: circle(50% at 50% 50%); // content floats around the element - circle
-    -webkit-clip-path: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%); //the element looks like a circle
     transform: translateX(-3rem) skewX(12deg);
     position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) { //safari 
+      -webkit-shape-outside: circle(50% at 50% 50%);
+      shape-outside: circle(50% at 50% 50%); // content floats around the element - circle
+      -webkit-clip-path: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%); //the element looks like a circle 
+      border-radius: none;
+    }
 
     @include respond(phone) {
       transform: translateX(-3rem) skewX(0);

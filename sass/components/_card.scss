@@ -13,6 +13,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    -webkit-backface-visibility: hidden; //safari
     backface-visibility: hidden;
     border-radius: 3px;
     overflow: hidden; //cause we want borders to be rounded,image was overflowing in the corners, so we're hiding these parts
