@@ -20,9 +20,10 @@
 &breakpoint argument choices:
 phone   tab-port   tab-land  big-desktop
 
+Order: base + typo > general layout + grid > page layout > components
+
 1em=16px
 ems are good option for media queries
-
 600px/16 etc.
 */
 @mixin respond($breakpoint) {
@@ -39,3 +40,6 @@ ems are good option for media queries
     @media (min-width: 112.5em ) { @content }; //1800px
   }
 }
+
+
+//media queries - padding, headings
